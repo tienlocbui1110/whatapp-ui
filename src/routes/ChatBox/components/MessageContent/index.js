@@ -12,10 +12,14 @@ marginRatio = width * 0.2;
 marginSpace = width * 0.05;
 
 export const MessageContent = ({ chatDataDetail }) => {
-  console.debug(chatDataDetail);
   return (
     <View style={styles.container}>
-      <ScrollView>
+      <ScrollView
+        ref={ref => (this.scrollView = ref)}
+        onContentSizeChange={(contentWidth, contentHeight) => {
+          this.scrollView.scrollToEnd({ animated: true });
+        }}
+      >
         {chatDataDetail.allMsg.map((date, i) => {
           return (
             <View key={i}>
