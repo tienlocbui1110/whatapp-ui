@@ -3,50 +3,81 @@ import constants from "./actionConstants";
 import { Dimensions } from "react-native";
 import config from "../../../config";
 // Constants
-const { GET_CURRENT_LOCATION } = constants;
+const { GET_MESSAGE_INPUT, SEND_MESSAGE } = constants;
 
 // Action
 
-export function getCurrentLocation() {
+export function getMessageInput(message) {
   return dispatch => {
-    navigator.geolocation.getCurrentPosition(
-      position => {
-        dispatch({
-          type: GET_CURRENT_LOCATION,
-          payload: position
-        });
-      },
-      error => console.debug(error.message),
-      { enableHighAccuracy: false, timeout: 20000, maximumAge: 1000 }
-    );
+    dispatch({
+      type: "GET_MESSAGE_INPUT",
+      payload: message
+    });
+  };
+}
+
+export function sendMessage() {
+  return (dispatch, store) => {
+    // Get time
+    date = new Date();
+    time = date.getHours().toString() + ":" + date.getMinutes().toString();
+    // Get message
+    msg = store().chatbox.presentMessageInput;
+    person = "me";
+    dispatch({
+      type: "SEND_MESSAGE",
+      payload: {
+        data: [
+          {
+            data: msg,
+            time: time,
+            person: person
+          }
+        ],
+        index: store().home.presentIndex
+      }
+    });
   };
 }
 
 // Action handler
 
-function handleGetCurrentLocation(state, action) {
+function handleGetMessageInput(state, action) {
   return update(state, {
-    region: {
-      latitude: {
-        $set: action.payload.coords.latitude
-      },
-      longitude: {
-        $set: action.payload.coords.longitude
-      },
-      latitudeDelta: {
-        $set: LATITUDE_DELTA
-      },
-      longitudeDelta: {
-        $set: LONGITUDE_DELTA
+    presentMessageInput: {
+      $set: action.payload
+    }
+  });
+}
+
+function handleSendMessage(state, action) {
+  console.debug(action.payload);
+  return update(state, {
+    allChatDetailsData: {
+      [action.payload.index]: {
+        allMsg: {
+          1: {
+            msg: {
+              $push: action.payload.data
+            }
+          }
+        }
       }
+    },
+    presentMessageInput: {
+      $set: ""
     }
   });
 }
 
 const ACTION_HANDLERS = {
-  GET_CURRENT_LOCATION: handleGetCurrentLocation
+  GET_MESSAGE_INPUT: handleGetMessageInput,
+  SEND_MESSAGE: handleSendMessage
 };
-const initialState = {};
+const initialState = {
+  allChatDetailsData: config.allChatDetailsData,
+  presentMessageInput: ""
+};
 
 export function ChatBoxReducer(state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type];
