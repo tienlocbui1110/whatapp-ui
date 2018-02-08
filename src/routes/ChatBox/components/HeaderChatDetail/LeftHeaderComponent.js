@@ -6,7 +6,6 @@ const logo = require("../../../../assets/img/taxi.png");
 
 // Left Components
 export const LeftHeaderComponent = ({ chatDataDetail }) => {
-  console.debug(chatDataDetail);
   return (
     <View style={styles.container}>
       <IconFontAweSome

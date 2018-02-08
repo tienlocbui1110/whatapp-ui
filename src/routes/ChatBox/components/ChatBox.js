@@ -12,11 +12,18 @@ class ChatBox extends React.Component {
     return (
       <View style={{ flex: 1, flexDirection: "column" }}>
         <HeaderChatDetail
-          chatDataDetail={config.allChatDetailsData[this.props.presentIndex]}
+          chatDataDetail={
+            this.props.allChatDetailsData[this.props.presentIndex]
+          }
         />
         <ChatContent
           background={whatAppChatBackground}
-          chatDataDetail={config.allChatDetailsData[this.props.presentIndex]}
+          chatDataDetail={
+            this.props.allChatDetailsData[this.props.presentIndex]
+          }
+          getMessageInput={this.props.getMessageInput}
+          presentMessageInput={this.props.presentMessageInput}
+          sendMessage={this.props.sendMessage}
         />
       </View>
     );

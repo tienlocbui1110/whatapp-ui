@@ -8,10 +8,12 @@ const { OPEN_CHAT_DETAILS } = constants;
 // Action
 
 export function openChatDetails(index) {
-  return dispatch => {
+  return (dispatch, store) => {
     dispatch({
       type: OPEN_CHAT_DETAILS,
-      payload: index
+      payload: {
+        presentIndex: index
+      }
     });
   };
 }
@@ -21,7 +23,7 @@ export function openChatDetails(index) {
 function handleOpenChatDetails(state, action) {
   return update(state, {
     presentIndex: {
-      $set: action.payload
+      $set: action.payload.presentIndex
     },
     chatDetails: {
       $set: true

@@ -6,7 +6,13 @@ import FooterInputForm from "../FooterInputForm";
 
 var height = Dimensions.get("window").height;
 
-export const ChatContent = ({ background, chatDataDetail }) => {
+export const ChatContent = ({
+  background,
+  chatDataDetail,
+  getMessageInput,
+  presentMessageInput,
+  sendMessage
+}) => {
   return (
     <View>
       <ImageBackground
@@ -15,7 +21,11 @@ export const ChatContent = ({ background, chatDataDetail }) => {
         imageStyle={{ resizeMode: "cover" }}
       >
         <MessageContent chatDataDetail={chatDataDetail} />
-        <FooterInputForm />
+        <FooterInputForm
+          getMessageInput={getMessageInput}
+          presentMessageInput={presentMessageInput}
+          sendMessage={sendMessage}
+        />
       </ImageBackground>
     </View>
   );

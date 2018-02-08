@@ -1,3 +1,4 @@
 export default {
-  
+  GET_MESSAGE_INPUT: "GET_MESSAGE_INPUT",
+  SEND_MESSAGE: "SEND_MESSAGE"
 };

@@ -3,9 +3,11 @@ import {
   View,
   ListView,
   Text,
-  Button,
   Dimensions,
-  TextInput
+  TextInput,
+  Button,
+  TouchableNativeFeedback,
+  Vibration
 } from "react-native";
 import { Header } from "react-native-elements";
 import IconFontAweSome from "../../../../../node_modules/react-native-vector-icons/dist/FontAwesome";
@@ -14,7 +16,17 @@ import IconMaterialIcon from "../../../../../node_modules/react-native-vector-ic
 import styles from "./FooterInputFormStyles";
 
 maxMarginInputWidth = Dimensions.get("window").width * 0.8;
-export const FooterInputForm = ({}) => {
+
+export const FooterInputForm = ({
+  getMessageInput,
+  presentMessageInput,
+  sendMessage
+}) => {
+  // on change
+  const triggerChangeMessageInput = message => {
+    getMessageInput(message);
+  };
+  // View
   return (
     <View style={styles.container}>
       <View style={[styles.borderInput, { flex: 0.9 }]}>
@@ -23,6 +35,8 @@ export const FooterInputForm = ({}) => {
           style={{ flex: 1, fontSize: 18 }}
           placeholder={"Type a message"}
           placeholderTextColor={"#00000044"}
+          onChangeText={triggerChangeMessageInput}
+          value={presentMessageInput}
         />
         <View style={{ flexDirection: "row" }}>
           <IconFontAweSome
@@ -34,7 +48,21 @@ export const FooterInputForm = ({}) => {
         </View>
       </View>
       <View style={{ alignItems: "center", flex: 0.1 }}>
-        <IconFontAweSome name="microphone" size={45} style={{ marginTop: 4 }} />
+        {(presentMessageInput === "" && (
+          <TouchableNativeFeedback
+            onPress={() => {
+              console.debug("press");
+            }}
+          >
+            <IconFontAweSome name="microphone" size={45} />
+          </TouchableNativeFeedback>
+        )) || (
+          <TouchableNativeFeedback onPress={sendMessage}>
+            <View>
+              <IconFontAweSome name="caret-right" size={45} />
+            </View>
+          </TouchableNativeFeedback>
+        )}
       </View>
     </View>
   );

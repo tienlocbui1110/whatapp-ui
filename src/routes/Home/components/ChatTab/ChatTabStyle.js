@@ -32,7 +32,6 @@ export const styles = StyleSheet.create({
     flexDirection: "row"
   },
   avatar: {
-    borderRadius: 30,
     width: 60,
     height: 60,
     backgroundColor: "#bbb"

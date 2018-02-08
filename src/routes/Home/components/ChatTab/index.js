@@ -23,7 +23,7 @@ export const ChatTab = ({ chatData, openChatDetails }) => {
             }}
           >
             <View style={styles.container}>
-              <Image source={taxi} style={styles.avatar} borderRadius={30} />
+              <Image source={taxi} style={styles.avatar} />
               <View style={styles.information}>
                 <View style={styles.nameAndTime}>
                   <Text style={styles.name}>{data.name}</Text>
