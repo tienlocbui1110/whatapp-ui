@@ -5,7 +5,9 @@ import { Dimensions } from "react-native";
 import { Actions } from "react-native-router-flux";
 import config from "../../../config";
 import { Text } from "react-native-elements";
-import LeftHeaderComponent from "../../ChatBox/components/HeaderChatDetail/LeftHeaderComponent";
+
+// View
+import ChatBoxLeftHeader from "../../../components/ChatBoxHeader/ChatBoxLeftHeader";
 // Constants
 const { OPEN_CHAT_DETAILS, SETUP_IMPORTANT_STATE } = constants;
 
@@ -20,13 +22,7 @@ export function openChatDetails(index) {
       }
     });
     setTimeout(function() {
-      Actions.chatbox({
-        renderTitle: (
-          <LeftHeaderComponent
-            chatDataDetail={{ name: "hihi", lastSeen: "yesterday" }}
-          />
-        )
-      });
+      Actions.chatbox();
     }, 50);
   };
 }

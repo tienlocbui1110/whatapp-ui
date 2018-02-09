@@ -4,10 +4,23 @@ import ChatContent from "./ChatContent";
 import FooterInputForm from "./FooterInputForm";
 import config from "../../../config";
 import { Actions } from "react-native-router-flux";
+import ChatBoxLeftHeader from "../../../components/ChatBoxHeader/ChatBoxLeftHeader";
 
 const whatAppChatBackground = require("../../../assets/background/chat1.png");
 
 class ChatBox extends React.Component {
+  componentDidMount() {
+    Actions.refresh({
+      renderTitle: (
+        <ChatBoxLeftHeader
+          name={this.props.allChatDetailsData[this.props.presentIndex].name}
+          lastSeen={
+            this.props.allChatDetailsData[this.props.presentIndex].lastSeen
+          }
+        />
+      )
+    });
+  }
   render() {
     return (
       <View style={{ flex: 1, flexDirection: "column" }}>

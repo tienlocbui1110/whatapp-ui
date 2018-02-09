@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   time: {
     color: "white",
-    fontSize: 14
+    fontSize: 13
   },
   nameInfo: {
     flexDirection: "column",

@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flexDirection: "row"
   },
   icon: {
-    marginRight: 25
+    marginRight: 20
   }
 });
 
