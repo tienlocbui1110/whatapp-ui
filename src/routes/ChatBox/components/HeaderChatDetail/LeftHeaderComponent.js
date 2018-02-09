@@ -8,12 +8,6 @@ const logo = require("../../../../assets/img/taxi.png");
 export const LeftHeaderComponent = ({ chatDataDetail }) => {
   return (
     <View style={styles.container}>
-      <IconFontAweSome
-        name="arrow-left"
-        style={styles.Icon}
-        size={20}
-        color={"white"}
-      />
       <Image source={logo} style={styles.img} />
       <View style={styles.nameInfo}>
         <Text style={styles.name}>{chatDataDetail.name}</Text>

@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: "row"
   },
   name: {
@@ -15,8 +14,10 @@ const styles = StyleSheet.create({
     marginTop: 3
   },
   img: {
-    width: 35,
-    height: 35
+    width: 40,
+    height: 40,
+    marginTop: 2,
+    marginRight: 4
   },
   time: {
     color: "white",

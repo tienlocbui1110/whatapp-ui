@@ -3,7 +3,7 @@ import constants from "./actionConstants";
 import { Dimensions } from "react-native";
 import config from "../../../config";
 // Constants
-const { GET_MESSAGE_INPUT, SEND_MESSAGE } = constants;
+const { GET_MESSAGE_INPUT, SEND_MESSAGE, CLICK_BACK_BUTTON } = constants;
 
 // Action
 
@@ -51,7 +51,6 @@ function handleGetMessageInput(state, action) {
 }
 
 function handleSendMessage(state, action) {
-  console.debug(action.payload);
   return update(state, {
     allChatDetailsData: {
       [action.payload.index]: {

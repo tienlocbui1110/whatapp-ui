@@ -6,7 +6,7 @@ import styles from "./HeaderChatDetailStyles";
 // Right Components
 export const RightHeaderComponent = () => {
   return (
-    <View style={{ flex: 1, flexDirection: "row" }}>
+    <View style={[{ flexDirection: "row" }, styles.searchIcon]}>
       <IconMaterialIcon
         name="videocam"
         size={28}

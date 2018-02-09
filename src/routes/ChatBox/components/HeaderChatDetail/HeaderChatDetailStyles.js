@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   searchIcon: {
-    paddingRight: 30
+    marginRight: 25
   },
   Icon: {
     marginBottom: 2

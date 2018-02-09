@@ -1,9 +1,13 @@
+import React from "react";
 import update from "react-addons-update";
 import constants from "./actionConstants";
 import { Dimensions } from "react-native";
+import { Actions } from "react-native-router-flux";
 import config from "../../../config";
+import { Text } from "react-native-elements";
+import LeftHeaderComponent from "../../ChatBox/components/HeaderChatDetail/LeftHeaderComponent";
 // Constants
-const { OPEN_CHAT_DETAILS } = constants;
+const { OPEN_CHAT_DETAILS, SETUP_IMPORTANT_STATE } = constants;
 
 // Action
 
@@ -15,6 +19,15 @@ export function openChatDetails(index) {
         presentIndex: index
       }
     });
+    setTimeout(function() {
+      Actions.chatbox({
+        renderTitle: (
+          <LeftHeaderComponent
+            chatDataDetail={{ name: "hihi", lastSeen: "yesterday" }}
+          />
+        )
+      });
+    }, 50);
   };
 }
 
@@ -24,9 +37,6 @@ function handleOpenChatDetails(state, action) {
   return update(state, {
     presentIndex: {
       $set: action.payload.presentIndex
-    },
-    chatDetails: {
-      $set: true
     }
   });
 }
@@ -37,7 +47,7 @@ const ACTION_HANDLERS = {
 const initialState = {
   chatData: config.chatData,
   statusData: config.statusData,
-  chatDetails: false
+  chatBoxOpened: false
 };
 
 export function HomeReducer(state = initialState, action) {
