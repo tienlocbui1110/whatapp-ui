@@ -7,11 +7,9 @@ import Sent from "./Sent";
 import Receive from "./Receive";
 
 const width = Dimensions.get("window").width;
-const maxWidth = width * 0.75;
-marginRatio = width * 0.2;
-marginSpace = width * 0.05;
+marginNear = width * 0.05;
 
-export const MessageContent = ({ chatDataDetail }) => {
+export const MessageContent = ({ chatDataDetail, maxWidth }) => {
   return (
     <View style={styles.container}>
       <ScrollView
@@ -31,15 +29,13 @@ export const MessageContent = ({ chatDataDetail }) => {
                       <Sent
                         msg={msg}
                         maxWidth={maxWidth}
-                        marginRatio={marginRatio}
-                        marginSpace={marginSpace}
+                        marginNear={marginNear}
                       />
                     )) || (
                       <Receive
                         msg={msg}
                         maxWidth={maxWidth}
-                        marginRatio={marginRatio}
-                        marginSpace={marginSpace}
+                        marginNear={marginNear}
                       />
                     )}
                   </View>

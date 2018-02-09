@@ -11,7 +11,11 @@ export const ChatContent = ({
   chatDataDetail,
   getMessageInput,
   presentMessageInput,
-  sendMessage
+  sendMessage,
+  triggerCameraButton,
+  cameraButtonClicked,
+  sendImage,
+  maxWidth
 }) => {
   return (
     <View>
@@ -20,11 +24,15 @@ export const ChatContent = ({
         style={{ height: height }}
         imageStyle={{ resizeMode: "cover" }}
       >
-        <MessageContent chatDataDetail={chatDataDetail} />
+        <MessageContent chatDataDetail={chatDataDetail} maxWidth={maxWidth} />
         <FooterInputForm
           getMessageInput={getMessageInput}
           presentMessageInput={presentMessageInput}
           sendMessage={sendMessage}
+          triggerCameraButton={triggerCameraButton}
+          cameraButtonClicked={cameraButtonClicked}
+          sendImage={sendImage}
+          maxWidth={maxWidth}
         />
       </ImageBackground>
     </View>

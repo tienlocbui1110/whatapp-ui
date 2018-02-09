@@ -7,12 +7,12 @@ import {
   TextInput,
   Button,
   TouchableNativeFeedback,
-  Vibration
+  TouchableOpacity
 } from "react-native";
-import { Header } from "react-native-elements";
 import IconFontAweSome from "../../../../../node_modules/react-native-vector-icons/dist/FontAwesome";
 import IconMaterialIcon from "../../../../../node_modules/react-native-vector-icons/dist/MaterialIcons";
 
+var ImagePicker = require("react-native-image-picker");
 import styles from "./FooterInputFormStyles";
 
 maxMarginInputWidth = Dimensions.get("window").width * 0.8;
@@ -20,11 +20,41 @@ maxMarginInputWidth = Dimensions.get("window").width * 0.8;
 export const FooterInputForm = ({
   getMessageInput,
   presentMessageInput,
-  sendMessage
+  sendMessage,
+  triggerCameraButton,
+  cameraButtonClicked,
+  sendImage
 }) => {
   // on change
   const triggerChangeMessageInput = message => {
     getMessageInput(message);
+  };
+
+  const triggerCameraButtonClicked = () => {
+    var options = {
+      title: "Select Image",
+      storageOptions: {
+        skipBackup: true,
+        path: "images"
+      }
+    };
+    var source = {};
+
+    ImagePicker.showImagePicker(options, response => {
+      if (!response.didCancel && !response.customButton) {
+        if (response.error) {
+          console.log(response.error);
+        } else {
+          source = { uri: response.uri };
+        }
+      }
+
+      // UnTrigger
+      triggerCameraButton(false);
+      if (source.uri) {
+        sendImage(source);
+      }
+    });
   };
   // View
   return (
@@ -44,7 +74,14 @@ export const FooterInputForm = ({
             size={25}
             style={styles.iconRight}
           />
-          <IconFontAweSome name="camera" size={25} style={styles.iconRight} />
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => {
+              return triggerCameraButton(true);
+            }}
+          >
+            <IconFontAweSome name="camera" size={25} style={styles.iconRight} />
+          </TouchableOpacity>
         </View>
       </View>
       <View style={{ alignItems: "center", flex: 0.1 }}>
@@ -57,12 +94,14 @@ export const FooterInputForm = ({
             <IconFontAweSome name="microphone" size={45} />
           </TouchableNativeFeedback>
         )) || (
-          <TouchableNativeFeedback onPress={sendMessage}>
+          <TouchableNativeFeedback useForeground={true} onPress={sendMessage}>
             <View>
               <IconFontAweSome name="caret-right" size={45} />
             </View>
           </TouchableNativeFeedback>
         )}
+        {/* Check if camera button is true */}
+        {cameraButtonClicked === true && triggerCameraButtonClicked()}
       </View>
     </View>
   );

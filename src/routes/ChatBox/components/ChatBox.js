@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Text, BackHandler } from "react-native";
+import { View, Text } from "react-native";
 import ChatContent from "./ChatContent";
 import FooterInputForm from "./FooterInputForm";
-import config from "../../../config";
 import { Actions } from "react-native-router-flux";
 import ChatBoxLeftHeader from "../../../components/ChatBoxHeader/ChatBoxLeftHeader";
 
@@ -32,6 +31,10 @@ class ChatBox extends React.Component {
           getMessageInput={this.props.getMessageInput}
           presentMessageInput={this.props.presentMessageInput}
           sendMessage={this.props.sendMessage}
+          triggerCameraButton={this.props.triggerCameraButton}
+          cameraButtonClicked={this.props.cameraButtonClicked}
+          sendImage={this.props.sendImage}
+          maxWidth={this.props.maxWidth}
         />
       </View>
     );

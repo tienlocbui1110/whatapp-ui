@@ -2,20 +2,29 @@ import React from "react";
 import { View, Text } from "react-native";
 import styles from "./ReceiveStyles";
 
-export const Receive = ({ msg, maxWidth, marginRatio, marginSpace }) => {
+export const Receive = ({ msg, maxWidth, marginNear, marginFar }) => {
   return (
     <View
       style={[
         {
           maxWidth: maxWidth,
-          marginRight: marginRatio,
-          marginLeft: marginSpace,
+          marginLeft: marginNear,
           alignSelf: "flex-start"
         },
         styles.chatBox
       ]}
     >
-      <Text style={[styles.textSize]}>{msg.data}</Text>
+      {msg.type === "msg" && <Text style={[styles.textSize]}>{msg.data}</Text>}
+      {msg.type === "image" && (
+        <Image
+          source={{ uri: msg.uri }}
+          resizeMode={"cover"}
+          style={{
+            width: msg.width,
+            height: msg.height
+          }}
+        />
+      )}
       <Text style={[styles.time]}>{msg.time}</Text>
     </View>
   );

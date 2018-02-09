@@ -57,36 +57,43 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Buon ghe",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tu ki r",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tu viet tu tra loi :(",
               time: "11:18 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Khong sao dau",
               time: "11:19 AM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Co minh ne",
               time: "11:19 AM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Minh dang chat voi ban ne hihi",
               time: "11:20 AM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Ban co khoe khong",
               time: "11:22 AM",
               person: "you"
@@ -97,11 +104,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Ban dau roi",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data:
                 "Minh ne, minh khoe lam, con ban thi sao, ban co khoe nhu minh khong ?",
               time: "8:25 PM",
@@ -120,16 +129,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -140,11 +152,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"
@@ -162,16 +176,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -182,11 +199,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"
@@ -204,16 +223,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -224,11 +246,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"
@@ -246,16 +270,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -266,11 +293,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"
@@ -288,16 +317,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -308,11 +340,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"
@@ -330,16 +364,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -350,11 +387,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"
@@ -372,16 +411,19 @@ export const config = {
           time: "JANUARY 31, 2018",
           msg: [
             {
+              type: "msg",
               data: "Tin nhan thu nhat",
               time: "11:14 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu hai",
               time: "11:16 AM",
               person: "me"
             },
             {
+              type: "msg",
               data: "Tin nhan thu ba",
               time: "11:18 AM",
               person: "you"
@@ -392,11 +434,13 @@ export const config = {
           time: "TODAY",
           msg: [
             {
+              type: "msg",
               data: "Nay gui them tin nhan ne",
               time: "8:20 PM",
               person: "you"
             },
             {
+              type: "msg",
               data: "Gui them 1 tin cho vui",
               time: "8:25 PM",
               person: "me"

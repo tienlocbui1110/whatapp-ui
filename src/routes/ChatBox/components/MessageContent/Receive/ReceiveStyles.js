@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     marginTop: 3,
-    marginBottom: 3
+    marginBottom: 6
   },
   time: {
     fontSize: 13,
